@@ -15,6 +15,17 @@ interface GitHubTreeItem {
 export class GitHubService {
   private baseUrl = 'https://api.github.com';
 
+  private base64ToUtf8(base64: string): string {
+    // Remove any newlines that GitHub may insert in base64 content
+    const sanitized = base64.replace(/\n/g, '');
+    const binaryString = atob(sanitized);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    return new TextDecoder('utf-8').decode(bytes);
+  }
+
   async fetchRepositoryFiles(
     owner: string,
     repo: string,
@@ -92,7 +103,7 @@ export class GitHubService {
 
     const data = await response.json();
     return {
-      content: atob(data.content),
+      content: this.base64ToUtf8(data.content),
       sha: data.sha,
     };
   }
