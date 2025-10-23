@@ -5,7 +5,10 @@ import { supabase } from '../lib/supabase';
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  signUp: (email: string, password: string) => Promise<{ error: AuthError | null }>;
+  signUp: (
+    email: string,
+    password: string
+  ) => Promise<{ error: AuthError | null; registered: boolean }>;
   signIn: (email: string, password: string) => Promise<{ error: AuthError | null }>;
   signOut: () => Promise<void>;
 }
@@ -32,8 +35,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const signUp = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signUp({ email, password });
-    return { error };
+    // Attempt to register the user
+    const { error: signUpError, data } = await supabase.auth.signUp({ email, password });
+
+    if (signUpError) {
+      return { error: signUpError, registered: false };
+    }
+
+    // If email confirmation is disabled in Supabase, a session will already exist.
+    // If it is enabled, try to sign in immediately (may fail with email-not-confirmed).
+    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+
+    return { error: signInError ?? null, registered: true };
   };
 
   const signIn = async (email: string, password: string) => {
