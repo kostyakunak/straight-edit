@@ -4,7 +4,7 @@
 
 StraightEdit is a SaaS platform that allows anyone to edit text content on GitHub-hosted static websites through a simple, intuitive interface. Perfect for freelancers who want to deliver websites that clients can update themselves.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://your-demo-url.com)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://straight-edit.vercel.app)
 [![GitHub](https://img.shields.io/github/stars/kostyakunak/straight-edit?style=social)](https://github.com/kostyakunak/straight-edit)
 
 ---
@@ -14,6 +14,12 @@ StraightEdit is a SaaS platform that allows anyone to edit text content on GitHu
 StraightEdit is a visual content editor that connects directly to GitHub repositories. It extracts all text content from website files and presents it in an easy-to-use editor, eliminating the need to touch any code.
 
 **Think of it as a bridge between GitHub and your non-technical clients.**
+
+### 🌐 See it live
+- **Live site:** [straight-edit.vercel.app](https://straight-edit.vercel.app)
+- **Hosted on:** Vercel (global CDN, HTTPS, auto-deploys)
+- **Backend:** Supabase (database + auth)
+- **Repository:** [GitHub](https://github.com/kostyakunak/straight-edit)
 
 ---
 
@@ -366,10 +372,68 @@ A: Static sites are extremely fast. StraightEdit doesn't add any runtime overhea
 
 ## 🌐 Live Platform
 
-**Coming Soon:** StraightEdit will be available as a hosted SaaS platform.
+**Live now:** StraightEdit is available as a hosted SaaS platform.
 
-Stay tuned for launch updates!
+Visit: [straight-edit.vercel.app](https://straight-edit.vercel.app)
 
 ---
 
 **Star this repo ⭐ if you think StraightEdit is useful for your freelance business!**
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+- **React 18** — современный UI фреймворк
+- **TypeScript** — типизированный JavaScript для надежности
+- **Tailwind CSS** — быстрая стилизация без CSS файлов
+- **Vite** — быстрый сборщик и dev-сервер
+
+### Backend & Infrastructure
+- **Supabase** — база данных PostgreSQL + аутентификация + API
+- **Vercel** — хостинг фронтенда с глобальным CDN
+- **GitHub API** — интеграция с репозиториями
+
+### Development & Deployment
+- **Git** — контроль версий
+- **GitHub** — хранение кода
+- **Vercel** — автоматические деплои при каждом push
+
+---
+
+## 🎬 How It Works in Practice
+
+### 1. **Freelancer Setup** (2 minutes)
+1. Freelancer logs in to [straight-edit.vercel.app](https://straight-edit.vercel.app)
+2. Clicks "New Project"
+3. Enters GitHub repository URL (e.g., `https://github.com/client/website`)
+4. Adds GitHub Personal Access Token
+5. Project is imported and ready!
+
+### 2. **Client Usage** (30 seconds)
+1. Client gets login credentials from freelancer
+2. Client logs in to [straight-edit.vercel.app](https://straight-edit.vercel.app)
+3. Sees their website content in plain text
+4. Edits any text they want
+5. Clicks "Deploy" — changes go live instantly!
+
+### 3. **Real Example**
+**Before:** Client emails "Can you change the menu prices?"
+**After:** Client logs in → finds menu → updates prices → clicks deploy
+
+**Time saved:** 15-30 minutes per request
+**Client satisfaction:** Independent and empowered
+
+---
+
+## 🌐 Where Everything Lives
+
+- **Website:** [straight-edit.vercel.app](https://straight-edit.vercel.app) (Vercel hosting)
+- **Code:** [github.com/kostyakunak/straight-edit](https://github.com/kostyakunak/straight-edit)
+- **Database:** Supabase (PostgreSQL in the cloud)
+- **Authentication:** Supabase Auth
+- **File Storage:** GitHub repositories
+- **CDN:** Vercel Edge Network (global)
+
+**All services are production-ready and scalable.**
