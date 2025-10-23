@@ -21,3 +21,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Local development documentation (not for GitHub)
+ЧТО_ДЕЛАТЬ_ДАЛЬШЕ.txt
