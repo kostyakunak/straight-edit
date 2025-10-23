@@ -255,14 +255,12 @@ StraightEdit can extract content from:
 
 ---
 
-## 🚀 Deployment Options
+## 🚀 Deployment
 
 StraightEdit is designed to be deployed as a SaaS platform on:
 
-- **Railway** - Recommended for easy deployment
 - **Vercel** - Great for global performance
 - **Netlify** - Simple and reliable
-- **Your own infrastructure** - Full control
 
 The application uses Supabase for authentication and database, which provides:
 - Built-in user management
@@ -337,7 +335,6 @@ A: Static sites are extremely fast. StraightEdit doesn't add any runtime overhea
 - **Email**: kostyakunak@gmail.com
 - **GitHub**: https://github.com/kostyakunak/straight-edit
 - **Issues**: https://github.com/kostyakunak/straight-edit/issues
-- **Demo**: Coming soon!
 
 ---
 
